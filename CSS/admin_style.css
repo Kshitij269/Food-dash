@@ -188,16 +188,16 @@ section{
 }
 
 .header{
+   background-color: #fed330;
    position: sticky;
    top:0; left:0; right:0;
-   background-color: var(--white);
    box-shadow: var(--box-shadow);
    z-index: 1000;
    border-bottom: var(--border);
 }
 
 .header .flex{
-   display: flex;
+    display: flex;
    align-items: center;
    justify-content: space-between;
    position: relative;
@@ -215,7 +215,8 @@ section{
 .header .flex .navbar a{
    margin:0 1rem;
    font-size: 2rem;
-   color:var(--light-color);
+   color:black;
+   font-weight: bold;
 }
 
 .header .flex .navbar a:hover{
@@ -225,7 +226,7 @@ section{
 .header .flex .icons > *{
    font-size: 2.5rem;
    cursor: pointer;
-   color:var(--light-color);
+   color:black;
    margin-left: 1.7rem;
 }
 
@@ -277,10 +278,9 @@ section{
 
 .dashboard .box-container .box{
    text-align: center;
-   background-color: var(--white);
    border:var(--border);
    box-shadow: var(--box-shadow);
-   border-radius: .5rem;
+   border-radius: 10px;
    text-align: center;
    padding:1.5rem;
 }
@@ -297,12 +297,11 @@ section{
 .dashboard .box-container .box p{
    padding:1.5rem;
    border-radius: .5rem;
-   background-color: var(--light-bg);
+   background-color: white;
    border-radius: .5rem;
    font-size: 1.8rem;
    border:var(--border);
    margin:1rem 0;
-   color:var(--light-color);
 }
 
 .add-products form{

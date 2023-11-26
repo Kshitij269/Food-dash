@@ -178,7 +178,7 @@ section{
 }
 
 .header .flex .navbar a:hover{
-    color: var(--yellow);
+    color: white;
     text-decoration: underline;
 }
 
@@ -190,7 +190,7 @@ section{
 }
 
 .header .flex .icons > *:hover{
-    color: var(--yellow)
+    color: white;
 }
 
 .header .flex .icons span{
@@ -311,6 +311,7 @@ section{
 .category .box-container .box:hover{
     background: var(--black);
     transform: scale(0.8);
+    transition: 1s;
 }
 
 .category .box-container .box:hover img{
@@ -933,9 +934,9 @@ section{
 }
 
 .footer .grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem,1fr));
-    gap: 1.5em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: flex-start;
 }
 

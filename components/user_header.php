@@ -11,7 +11,7 @@
 
 <header class="header">
     <section class="flex">
-        <a href="home.php" class="logo"><b>Food Dash</b></a>
+        <a href="home.php" class="logo"><b><h1>Food Dash</h1></b></a>
 
         <nav class="navbar">
             <a href="home.php"><b>Home</b></a>

@@ -85,14 +85,14 @@ if(isset($_GET['delete'])){
 
    <form action="" method="POST" enctype="multipart/form-data">
       <h3>add product</h3>
-      <input type="text" required placeholder="enter product name" name="name" maxlength="100" class="box">
-      <input type="number" min="0" max="9999999999" required placeholder="enter product price" name="price" onkeypress="if(this.value.length == 10) return false;" class="box">
+      <input type="text" required placeholder="Enter product name" name="name" maxlength="100" class="box">
+      <input type="number" min="0" max="9999999999" required placeholder="Enter product price" name="price" onkeypress="if(this.value.length == 10) return false;" class="box">
       <select name="category" class="box" required>
-         <option value="" disabled selected>select category --</option>
-         <option value="main dish">main dish</option>
-         <option value="fast food">fast food</option>
-         <option value="drinks">drinks</option>
-         <option value="desserts">desserts</option>
+         <option value="" disabled selected>Select category --</option>
+         <option value="main dish">Main dish</option>
+         <option value="fast food">Fast food</option>
+         <option value="drinks">Drinks</option>
+         <option value="desserts">Desserts</option>
       </select>
       <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp" required>
       <input type="submit" value="add product" name="add_product" class="btn">
@@ -116,7 +116,7 @@ if(isset($_GET['delete'])){
    <div class="box">
       <img src="../uploaded_img/<?= $fetch_products[$i]['image']; ?>" alt="">
       <div class="flex">
-         <div class="price"><span>$</span><?= $fetch_products[$i]['price']; ?><span>/-</span></div>
+         <div class="price"><span>&#8377;</span><?= $fetch_products[$i]['price']; ?><span>/-</span></div>
          <div class="category"><?= $fetch_products[$i]['category']; ?></div>
       </div>
       <div class="name"><?= $fetch_products[$i]['name']; ?></div>

@@ -138,8 +138,7 @@
             <input type="hidden" name="name" value="<?= $fetch_products[$i]['name']; ?>">
             <input type="hidden" name="price" value="<?= $fetch_products[$i]['price']; ?>">
             <input type="hidden" name="image" value="<?= $fetch_products[$i]['image']; ?>">
-            <a href="quick_view.php?pid=<?= $fetch_products[$i]['id']; ?>" class="fas fa-eye"></a>
-            <button type="submit" class="fas fa-cart-shopping" name="add_to_cart"></button>
+            <button type="submit" class="fas fa-plus" name="add_to_cart"></button>
             <img src="uploaded_img/<?= $fetch_products[$i]['image']; ?>" alt="">
             <a href="category.php?category=<?= $fetch_products[$i]['category']; ?>" class="cat"><?= $fetch_products[$i]['category']; ?></a>
             <div class="name"><?= $fetch_products[$i]['name']; ?></div>

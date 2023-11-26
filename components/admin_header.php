@@ -1,29 +1,32 @@
 <?php
-if(isset($message)){
-   foreach($message as $message){
+if (isset($message)) {
+   foreach ($message as $message) {
       echo '
       <div class="message">
-         <span>'.$message.'</span>
+         <span>' . $message . '</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
       ';
    }
 }
 ?>
+<style>
+   .h1f{
+      font-size: 3rem;
+   }
+</style>
 
 <header class="header">
 
    <section class="flex">
 
-      <a href="dashboard.php" class="logo">Food Dash <span>AdminPanel</span></a>
+      <h1 class="h1f">Food Dash</h1>
 
       <nav class="navbar">
-         <a href="dashboard.php">home</a>
-         <a href="products.php">products</a>
-         <a href="placed_orders.php">orders</a>
-         <a href="admin_accounts.php">admins</a>
-         <a href="users_accounts.php">users</a>
-         <a href="messages.php">messages</a>
+         <a href="dashboard.php">Home</a>
+         <a href="products.php">Products</a>
+         <a href="placed_orders.php">Orders</a>
+         <a href="users_accounts.php">Users</a>
       </nav>
 
       <div class="icons">
@@ -33,17 +36,18 @@ if(isset($message)){
 
       <div class="profile">
          <?php
-            $sql = "SELECT * FROM admin WHERE id = '$admin_id';";
-            $select_profile = mysqli_query($conn, $sql);
-            $fetch_profile = mysqli_fetch_all($select_profile, MYSQLI_ASSOC);
+         $sql = "SELECT * FROM admin WHERE id = '$admin_id';";
+         $select_profile = mysqli_query($conn, $sql);
+         $fetch_profile = mysqli_fetch_all($select_profile, MYSQLI_ASSOC);
          ?>
-         <p><?= $fetch_profile[0]['name']; ?></p>
-         <a href="update_profile.php" class="btn">Update profile</a>
+         <p>
+            <?= $fetch_profile[0]['name']; ?>
+         </p>
          <div class="flex-btn">
             <a href="admin_login.php" class="option-btn">Login</a>
-            <a href="register_admin.php" class="option-btn">Register</a>
          </div>
-         <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
+         <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');"
+            class="delete-btn">Logout</a>
       </div>
 
    </section>
