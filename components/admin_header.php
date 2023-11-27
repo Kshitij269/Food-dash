@@ -11,7 +11,7 @@ if (isset($message)) {
 }
 ?>
 <style>
-   .h1f{
+   .h1f {
       font-size: 3rem;
    }
 </style>
@@ -45,6 +45,7 @@ if (isset($message)) {
          </p>
          <div class="flex-btn">
             <a href="admin_login.php" class="option-btn">Login</a>
+            <a href="register_admin.php" class="option-btn">Register</a>
          </div>
          <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');"
             class="delete-btn">Logout</a>

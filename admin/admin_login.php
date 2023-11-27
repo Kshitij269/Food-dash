@@ -162,18 +162,17 @@ if (isset($_POST['submit'])) {
    </style>
 
    <div class="form-box">
-        <form action="" method="POST">
-            <div class="header-text">
-                Login Form
-            </div>
-            <center><h1>Default username = <span>admin</span> & password = <span>111</span></h1></center>
-            <input type="text" name="name" required placeholder="Enter your Username" class="box" maxlength="50"
-                oninput="this.value = this.value.replace(/\s/g, '')">
-            <input type="password" name="pass" required placeholder="Enter your password" class="box" maxlength="50"
-                oninput="this.value = this.value.replace(/\s/g, '')">
-            <input type="submit" value="Login now" name="submit" class="btn">
-        </form>
-    </div>
+      <form action="" method="POST">
+         <div class="header-text">
+            Login Form
+         </div>
+         <input type="text" name="name" required placeholder="Enter your Username" class="box" maxlength="50"
+            oninput="this.value = this.value.replace(/\s/g, '')">
+         <input type="password" name="pass" required placeholder="Enter your password" class="box" maxlength="50"
+            oninput="this.value = this.value.replace(/\s/g, '')">
+         <input type="submit" value="Login now" name="submit" class="btn">
+      </form>
+   </div>
 
    <!-- admin login form section ends -->
 

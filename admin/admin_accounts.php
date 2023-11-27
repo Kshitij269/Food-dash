@@ -44,7 +44,7 @@ if(isset($_GET['delete'])){
    <div class="box-container">
 
    <div class="box">
-      <p>register new admin</p>
+      <p>Register new admin</p>
       <a href="register_admin.php" class="option-btn">register</a>
    </div>
 
@@ -56,15 +56,11 @@ if(isset($_GET['delete'])){
             for($i = 0; $i < count($fetch_accounts); $i++){
    ?>
    <div class="box">
-      <p> admin id : <span><?= $fetch_accounts[$i]['id']; ?></span> </p>
-      <p> username : <span><?= $fetch_accounts[$i]['name']; ?></span> </p>
+      <p> Admin id : <span><?= $fetch_accounts[$i]['id']; ?></span> </p>
+      <p> Username : <span><?= $fetch_accounts[$i]['name']; ?></span> </p>
       <div class="flex-btn">
          <a href="admin_accounts.php?delete=<?= $fetch_accounts[$i]['id']; ?>" class="delete-btn" onclick="return confirm('Delete this account?');">delete</a>
-         <?php
-            if($fetch_accounts[$i]['id'] == $admin_id){
-               echo '<a href="update_profile.php" class="option-btn">Update</a>';
-            }
-         ?>
+
       </div>
    </div>
    <?php

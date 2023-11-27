@@ -1,10 +1,9 @@
 <?php
-
 include '../components/connection.php';
-
 session_start();
 
 $admin_id = $_SESSION['admin_id'];
+$admin_name = $_SESSION['admin_name'];
 
 if (!isset($admin_id)) {
    header('location:admin_login.php');
@@ -46,17 +45,52 @@ if (!isset($admin_id)) {
    <section class="dashboard">
       <h1 class="heading">dashboard</h1>
       <div class="box-container">
-
+      
          <div class="box">
             <h3>Welcome!</h3>
             <p>
-               <?= $fetch_profile[0]['name']; ?>
+               Admin Id = <?= $admin_id; ?>
             </p>
          </div>
       </div>
       <br>
+
       <div class="box-container">
-         
+
+         <div class="box">
+            <?php
+            $total_pendings = 0;
+            $sql = "SELECT * FROM orders WHERE payment_status = 'pending';";
+            $select_pendings = mysqli_query($conn, $sql);
+            $fetch_pendings = mysqli_fetch_all($select_pendings, MYSQLI_ASSOC);
+            for ($i = 0; $i < count($fetch_pendings); $i++) {
+               $total_pendings += $fetch_pendings[$i]['total_price'];
+            }
+            ?>
+            <h3><span>$</span>
+               <?= $total_pendings; ?><span>/-</span>
+            </h3>
+            <p>Total pendings</p>
+            <a href="placed_orders.php" class="btn">see orders</a>
+         </div>
+
+         <div class="box">
+            <?php
+            $total_completes = 0;
+            $sql = "SELECT * FROM orders WHERE payment_status = 'completed';";
+            $select_completes = mysqli_query($conn, $sql);
+            $fetch_completes = mysqli_fetch_all($select_completes, MYSQLI_ASSOC);
+            for ($i = 0; $i < count($fetch_completes); $i++) {
+               $total_completes += $fetch_completes[$i]['total_price'];
+            }
+            ?>
+            <h3><span>&#8377;</span>
+               <?= $total_completes; ?><span>/-</span>
+            </h3>
+            <p>Total completes</p>
+            <a href="placed_orders.php" class="btn">see orders</a>
+         </div>
+
          <div class="box">
             <?php
             $sql = "SELECT * FROM orders;";
@@ -99,6 +133,33 @@ if (!isset($admin_id)) {
             <a href="users_accounts.php" class="btn">see users</a>
          </div>
 
+         <div class="box">
+            <?php
+            $sql = "SELECT * FROM admin;";
+            $select_admins = mysqli_query($conn, $sql);
+            $fetch_admins = mysqli_fetch_all($select_admins, MYSQLI_ASSOC);
+            $numbers_of_admins = count($fetch_admins);
+            ?>
+            <h3>
+               <?= $numbers_of_admins; ?>
+            </h3>
+            <p>Admins</p>
+            <a href="admin_accounts.php" class="btn">see admins</a>
+         </div>
+
+         <div class="box">
+            <?php
+            $sql = "SELECT * FROM messages;";
+            $select_messages = mysqli_query($conn, $sql);
+            $fetch_messages = mysqli_fetch_all($select_messages, MYSQLI_ASSOC);
+            $numbers_of_messages = count($fetch_messages);
+            ?>
+            <h3>
+               <?= $numbers_of_messages; ?>
+            </h3>
+            <p>New messages</p>
+            <a href="messages.php" class="btn">see messages</a>
+         </div>
 
       </div>
 
